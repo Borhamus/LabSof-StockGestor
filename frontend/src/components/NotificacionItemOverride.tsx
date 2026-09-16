@@ -54,7 +54,7 @@ export const CampanaOverrideNotificacion: React.FC<Props> = ({
   defaultMaximo,
 }) => {
   const form = Form.useFormInstance();
-  const valorActual = Form.useWatch(fieldNamePath, form) as
+  const valorActual = Form.useWatch(fieldNamePath, { form, preserve: true }) as
     | { recordatorio_dias?: number | null; minimo?: number | null; maximo?: number | null }
     | undefined;
 

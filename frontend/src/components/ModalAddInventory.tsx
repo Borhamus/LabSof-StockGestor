@@ -308,13 +308,17 @@ export const ModalAddInventory: React.FC<Props> = ({ open, onClose }) => {
                         />
                       </Form.Item>
                       {TIPOS_NUMERICOS_UNIDAD.has(tipoActual ?? '') && (
-                        <Form.Item {...restField} name={[name, 'unidad']} style={{ margin: 0 }}>
+                        <Form.Item
+                          {...restField}
+                          name={[name, 'unidad']}
+                          style={{ margin: 0 }}
+                          normalize={(valor) => (typeof valor === 'string' ? valor.slice(0, 8) : valor)}
+                        >
                           <AutoComplete
                             options={UNIDADES_SUGERIDAS.map((u) => ({ value: u }))}
                             style={{ width: '110px' }}
-                          >
-                            <Input placeholder="Unidad ($, kg…)" maxLength={8} />
-                          </AutoComplete>
+                            placeholder="Unidad ($, kg…)"
+                          />
                         </Form.Item>
                       )}
                       {puedeNotificar && (

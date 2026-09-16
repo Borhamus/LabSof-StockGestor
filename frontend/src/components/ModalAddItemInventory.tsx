@@ -103,7 +103,7 @@ export const ModalAddItemInventory: React.FC<Props> = ({
       const payloadCompleto = {
         ...values,
         atributos: atributosLimpios,
-        notificaciones_config: limpiarNotificacionesOverrideItem(values.notificaciones_config),
+        notificaciones_config: limpiarNotificacionesOverrideItem(form.getFieldValue('notificaciones_config')),
         inventario_id: inventoryId
       };
 

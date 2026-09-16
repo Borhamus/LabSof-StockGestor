@@ -123,7 +123,7 @@ export const ModalEditItemInventory: React.FC<Props> = ({
           nombre: values.nombre,
           cantidad: values.cantidad,
           atributos: atributosLimpios,
-          notificaciones_config: limpiarNotificacionesOverrideItem(values.notificaciones_config),
+          notificaciones_config: limpiarNotificacionesOverrideItem(form.getFieldValue('notificaciones_config')),
         };
   
         updateItem(
